@@ -1,4 +1,4 @@
-# 修改go编译器允许没有使用的变量和包
+# 修改go编译器允许代码存在未使用的变量和包
 
 先直接看修改之后的结果，这样一份代码
 ```go
@@ -95,3 +95,6 @@ cd /usr/local/go/src/cmd/compile/internal/big
 ```
 这样会在当前目录生成compile。然后上面输出可以找到 `/usr/local/go/pkg/tool/darwin_amd64/compile `这个二进制文件，
 用当前目录生成的compile覆盖之前的就ok了。
+
+
+文章地址 https://github.com/wangkechun/golang-learn/blob/master/article/go-compile-allowed-unused-packages-and-vars.md
