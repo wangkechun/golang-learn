@@ -30,3 +30,5 @@ https://github.com/Sirupsen/logrus  docker 使用的日志库
 
 
 https://github.com/inconshreveable/ngrok  ngrok
+
+https://github.com/mitchellh/gox 交叉编译工具

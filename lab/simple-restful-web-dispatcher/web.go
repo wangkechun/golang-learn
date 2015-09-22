@@ -1,18 +1,30 @@
-// from https://gist.github.com/shaunlee/8895120
-package main
+package web
 
 import (
-	"fmt"
 	"log"
 	"net/http"
-	"regexp"
-	"strings"
 )
 
-var _ = fmt.Print
-var _ = log.Print
-var _ = http.DefaultMaxHeaderBytes
-var _ = regexp.Compile
-var _ = strings.Compare
+// Handler is the main handler
+type Handler struct {
+}
 
-const defaultMaxMemory = 32 << 20
+// New a Handler
+func New() *Handler {
+	return &Handler{}
+}
+
+// ServerHTTP ...
+func (p *Handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	defer func() {
+		if err := recover(); err != nil {
+			log.Println(err)
+		}
+	}()
+	w.Write([]byte("aaa"))
+}
+
+// Run server
+func (p *Handler) Run(addr string) error {
+	return http.ListenAndServe(addr, p)
+}
