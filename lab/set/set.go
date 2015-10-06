@@ -30,7 +30,7 @@ func (set *HashSet) Remove(e interface{}) {
 }
 
 // Clear the HashSet
-func (set *HashSet) Clear(e interface{}) {
+func (set *HashSet) Clear() {
 	set.m = make(map[interface{}]bool)
 }
 
